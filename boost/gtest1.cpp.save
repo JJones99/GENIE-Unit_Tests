@@ -1,0 +1,28 @@
+#define BOOST_TEST_DYN_LINK
+#define BOOST_TEST_MODULE Genie
+#include <boost/test/unit_test.hpp>
+#include <iostream>
+#include <iterator>
+#include "Interaction.h"
+#include "LwlynSmithQELCCPXSec.h"
+#include "KPhaseSpace.h"
+#include "XclsTag.h"
+#include "Kinematics.h"
+using namespace std;
+using namespace genie;
+
+BOOST_AUTO_TEST_SUITE(Lwlyn)
+// Build things from class Interaction for testing
+Inraction inter;
+//InitialState myinitstate;
+//ProcessInfo myprocinfo;
+//Kinematics mykmat;
+//XclsTag xtag;
+//KPhaseSpace kpspace;
+KinePhaseSpace_t kps = kPSQ2fE;
+BOOST_AUTO_TEST_CASE(doubles)
+{
+BOOST_CHECK(inter.XSec(&inter, kps) = 5.33659844441833672E-11);
+}
+
+BOOST_AUTO_TEST_SUITE_END()
